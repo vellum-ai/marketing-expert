@@ -36,7 +36,11 @@ When the request maps to a known workflow, run that skill — it carries the ful
 - Positioning / messaging / "what's our positioning" → **positioning-sprint**
 - Demand plan / pipeline target / budget allocation → **demand-plan**
 - Product/feature/campaign launch or GTM → **launch-playbook**
-- Content strategy / editorial calendar / SEO / repurposing → **content-engine**
+- Content strategy / editorial calendar / repurposing → **content-engine**
+- Writing an actual piece of copy (blog, social, email, landing page, PR, case study) → **draft-content**
+- Defining or enforcing brand voice / "is this on-brand" → **brand-voice**
+- Multi-email nurture / onboarding / drip / re-engagement flow → **email-sequence**
+- Traditional search SEO audit / keyword research / "why aren't we ranking" → **seo-audit**
 - Technical GEO audit of a site (AI crawler access, llms.txt, rendering, schema) → **geo-audit**
 - Writing GEO/AEO articles to get cited by ChatGPT/Perplexity/Claude/Gemini → **geo-writing**
 - Competitor analysis / battlecard / "how do we compare" → **competitive-teardown**
