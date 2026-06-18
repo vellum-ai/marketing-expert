@@ -28,7 +28,10 @@ Produce the output sections from the rubric:
 - Objections this competitor raises about us, and our counters.
 - 2–3 recommended responses (messaging shifts, content to create, or product asks to file).
 
-### Step 5: Keep it current
+### Step 5: Deliver in the Document Writer (not a wall of text in chat)
+A teardown is long-form, so don't dump it into the conversation — open it in the **Document Writer**: call `document_create` with a title like "<Competitor> teardown" to open the editor, then stream the comparison table and battlecard sections via `document_update` with `mode: "append"` (reuse the `surface_id` from `document_create`; don't create a second document). In the chat, leave a tight summary — where we win / where they win plus the top 2–3 recommended responses — and point the user to the document for the full analysis.
+
+### Step 6: Keep it current
 Note the date of the analysis and which facts are most likely to go stale (pricing, recent launches). Recommend a refresh cadence.
 
 Be honest about where the competitor is genuinely stronger — a battlecard that pretends otherwise gets sales reps burned.
