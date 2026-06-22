@@ -35,12 +35,15 @@ routes to the specific playbooks below.
 | Skill | What it does |
 | --- | --- |
 | `marketing-expert` | Entry point: the persona + operating principles, and a router to the playbooks below. Triggers on broad asks ("help with marketing", "be my CMO", "marketing strategy"). |
+| `marketing-plan` | Stand up and **maintain** one living GTM plan doc (positioning, channels, calendar, paid-ads framework, action-item checkboxes) across sessions — so strategy is organized and tracked, not one-shotted into chat. |
 | `founder-marketing` | Zero-to-one, founder-led growth for little time / no team / ~no budget — the early-stage counterpart to `demand-plan`. |
 | `positioning-sprint` | Guided April Dunford positioning + messaging hierarchy. |
 | `demand-plan` | Plan worked backward from a pipeline/revenue target through funnel math to channel budget. |
 | `launch-playbook` | Tiered product/feature/campaign launch: channels, timeline, owners, success metrics. |
 | `content-engine` | Editorial strategy: topic clusters, calendar, SEO briefs, repurposing. |
 | `draft-content` | Write the actual copy — blog, social, email, landing page, press release, case study — with headline/CTA guidance. |
+| `web-design` | Front-end design: landing pages and simple sites — lock the aesthetic up front, build clean responsive markup, structure for conversion. |
+| `visual-assets` | Graphic / media design: logos, social graphics, ad creative — distinct concept directions, proactive iteration, export-ready output. |
 | `email-sequence` | Design multi-email nurture / onboarding / drip / re-engagement flows. |
 | `brand-voice` | Define and enforce a brand voice; review drafts for on-brand-ness. |
 | `seo-audit` | Traditional search SEO audit: keywords, on-page, technical, content gaps, competitors. |
@@ -63,6 +66,26 @@ routes to the specific playbooks below.
 2. Ask for marketing help (e.g. "how are we doing on CAC?" with some numbers, or
    "plan our Q3 launch") and confirm the right skill activates, the reply reads
    like a marketing expert, and `funnel_math` is called for any math.
+
+## Operating principles
+
+Beyond the marketing fundamentals, the `marketing-expert` skill enforces four
+execution principles drawn from real-user feedback:
+
+- **Brief first; depth in a document.** Lead with a skimmable answer, ask for
+  inputs as structured options, and push long strategy into the `marketing-plan`
+  doc — not a wall of text in chat.
+- **Default to action through the browser.** Live web tasks (handle checks,
+  scraping IG/TikTok, dashboard logins) go straight to browser automation instead
+  of stalling or handing the task back.
+- **Set integrations up, don't just describe them.** Check whether the user has an
+  account, serve the signup/API link, and collect secrets via the secure prompt
+  before touching integration code.
+- **Be honest about data confidence.** Label numbers as measured vs. inferred and
+  name the tool that gets real data first — never present guesses as validated.
+
+These assume the host assistant provides a browser/automation tool and a secure
+credential prompt; without them the behaviors degrade to explaining the steps.
 
 ## Notes
 
