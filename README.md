@@ -5,6 +5,22 @@ expert** for any business — B2B or B2C; SaaS, ecommerce, marketplace, consumer
 services, and more — **only when the user actually needs marketing help**. The
 depth is activated on demand by skills, not bolted onto every turn.
 
+## When to use this plugin
+
+Use this plugin when you need your assistant to think and act like a seasoned marketing leader, not just answer marketing questions, but own outcomes. Common triggers:
+
+- **"Help me with marketing" / "I don't know where to start"**: the entry-point skill activates and routes you to the right playbook.
+- **Positioning & messaging**: define or sharpen how you describe your product relative to alternatives.
+- **Demand & pipeline planning**: work backward from a revenue target to channel budget and funnel math.
+- **Product or feature launches**: tiered GTM launch plans with channels, timeline, owners, and metrics.
+- **Content & SEO / GEO**: editorial strategy, article briefs, technical SEO audits, GEO articles built to get cited by AI answer engines.
+- **Competitive analysis**: evidence-based teardowns and battlecards.
+- **Web design & visual assets**: landing pages, simple sites, logos, social graphics, ad creative.
+- **Email sequences & brand voice**: nurture flows, onboarding drips, voice definition and enforcement.
+- **Board / exec updates**: compute KPIs, frame wins and misses, make asks.
+
+If the request is marketing-related but doesn't map to a specific playbook, the plugin handles it directly with its operating principles and deterministic tools (funnel math, positioning canvas, launch briefs, competitive rubric).
+
 ## Install
 
 From the Vellum plugin marketplace:
@@ -15,6 +31,18 @@ assistant plugins install marketing-expert
 
 It registers on the next assistant start. (Manual alternative: place this repo's
 contents at `<workspaceDir>/plugins/marketing-expert/` and restart.)
+
+## How to start
+
+1. **Install the plugin** (see [Install](#install) above).
+2. **Ask your assistant for marketing help.** No special command, just describe what you need. A few examples:
+
+   > "We're a B2B SaaS doing $40k MRR. Help me figure out where to spend our next $5k/month on marketing."
+   > "Plan the launch for our new feature next month."
+   > "I have no idea where to start with marketing for my side project."
+
+3. **Provide context when asked.** The assistant works best with real numbers: revenue, CAC, conversion rates, budget. If you don't have them yet, it'll tell you what matters and make assumptions explicit.
+4. **Follow the playbook.** The activated skill guides you through a structured workflow and calls the right tools (funnel math, positioning canvas, etc.) inline. You'll get quantified recommendations and 2 to 3 prioritized next actions, not generic advice.
 
 ## How it works — three layers
 
