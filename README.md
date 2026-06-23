@@ -60,25 +60,25 @@ routes to the specific playbooks below.
 
 ## Skills
 
-| Skill | Try this | What you get |
-| --- | --- | --- |
-| `marketing-expert` | "Help me with marketing, I don't know where to start" | The right playbook activated, plus a prioritized plan tied to your funnel and unit economics |
-| `marketing-plan` | "Stand up a GTM plan I can keep updating" | A living plan doc (positioning, channels, calendar, ad framework, tracked action items) maintained across sessions |
-| `founder-marketing` | "I'm a solo founder with no budget, how do I get my first customers?" | A zero-to-one growth plan: the 2 to 3 channels to run now and what to ignore |
-| `positioning-sprint` | "What's our positioning? Help me sharpen it" | A Dunford positioning canvas and a messaging hierarchy ready for the site |
-| `demand-plan` | "I need $500k in pipeline next quarter, what's the plan?" | A budget-by-channel plan worked backward from the target through funnel math |
-| `launch-playbook` | "Plan the launch for our new feature next month" | A tiered launch brief: channels, timeline, owners, and success metrics |
-| `content-engine` | "Build me a content strategy and editorial calendar" | Topic clusters, a calendar, SEO briefs, and a repurposing plan |
-| `draft-content` | "Write the landing page copy for our new product" | Ready-to-ship copy with headline and CTA guidance |
-| `web-design` | "Design a landing page for this product" | A clean, responsive, conversion-structured page that doesn't look templated |
-| `visual-assets` | "Make me a logo and a set of social graphics" | Distinct concept directions and export-ready creative |
-| `email-sequence` | "Design a 5-email onboarding drip" | A full sequence with goals, timing, subject lines, and body copy per email |
-| `brand-voice` | "Define our brand voice and check if this draft is on-brand" | A documented voice and a flagged, corrected draft |
-| `seo-audit` | "Why aren't we ranking? Audit our SEO" | A prioritized audit: keywords, on-page, technical, content gaps, competitors |
-| `geo-audit` | "Run a GEO audit on our site" | A technical report on AI-crawler access, llms.txt, rendering, and schema |
-| `geo-writing` | "Write an article built to get cited by ChatGPT and Perplexity" | A GEO/AEO article structured to be quoted by AI answer engines |
-| `competitive-teardown` | "How do we compare to [competitor]?" | An evidence-based teardown and a battlecard-ready output |
-| `board-report` | "Build our marketing update for the board" | Computed KPIs and a wins / misses / asks narrative |
+| Skill | What it does |
+| --- | --- |
+| `marketing-expert` | Entry point: the persona + operating principles, and a router to the playbooks below. Triggers on broad asks ("help with marketing", "be my CMO", "marketing strategy"). |
+| `marketing-plan` | Stand up and **maintain** one living GTM plan doc (positioning, channels, calendar, paid-ads framework, action-item checkboxes) across sessions — so strategy is organized and tracked, not one-shotted into chat. |
+| `founder-marketing` | Zero-to-one, founder-led growth for little time / no team / ~no budget — the early-stage counterpart to `demand-plan`. |
+| `positioning-sprint` | Guided April Dunford positioning + messaging hierarchy. |
+| `demand-plan` | Plan worked backward from a pipeline/revenue target through funnel math to channel budget. |
+| `launch-playbook` | Tiered product/feature/campaign launch: channels, timeline, owners, success metrics. |
+| `content-engine` | Editorial strategy: topic clusters, calendar, SEO briefs, repurposing. |
+| `draft-content` | Write the actual copy — blog, social, email, landing page, press release, case study — with headline/CTA guidance. |
+| `web-design` | Front-end design: landing pages and simple sites — lock the aesthetic up front, build clean responsive markup, structure for conversion. |
+| `visual-assets` | Graphic / media design: logos, social graphics, ad creative — distinct concept directions, proactive iteration, export-ready output. |
+| `email-sequence` | Design multi-email nurture / onboarding / drip / re-engagement flows. |
+| `brand-voice` | Define and enforce a brand voice; review drafts for on-brand-ness. |
+| `seo-audit` | Traditional search SEO audit: keywords, on-page, technical, content gaps, competitors. |
+| `geo-audit` | One-command technical GEO audit (AI-crawler access, llms.txt, rendering, schema). |
+| `geo-writing` | GEO/AEO articles built to get cited by AI answer engines (ChatGPT, Perplexity, Claude, Gemini). |
+| `competitive-teardown` | Evidence-based competitor teardown → battlecard-ready output. |
+| `board-report` | Exec/board marketing update: compute KPIs, frame wins/misses/asks. |
 
 ## Tools
 
