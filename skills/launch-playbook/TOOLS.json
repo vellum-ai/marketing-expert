@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "gtm_launch_plan",
+      "description": "Produces a tiered GTM launch/campaign brief: launch tier, channel matrix, phased timeline checklist, owners, budget split, and funnel-tied success metrics. Use for product launches and campaigns.",
+      "category": "marketing",
+      "risk": "low",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "what_is_launching": { "type": "string", "description": "Product, feature, or campaign being launched." },
+          "impact": { "type": "string", "enum": ["tier1", "tier2", "tier3"], "description": "Strategic impact. tier1 = company-defining, tier2 = notable, tier3 = incremental." },
+          "audience": { "type": "string", "description": "Primary target audience / ICP." },
+          "primary_goal": { "type": "string", "enum": ["awareness", "pipeline", "adoption", "expansion"], "description": "The single primary objective." },
+          "launch_date": { "type": "string", "description": "Target launch date." },
+          "budget": { "type": "number", "description": "Total budget available for the launch." },
+          "motion": { "type": "string", "enum": ["plg", "sales_led", "hybrid"], "description": "GTM motion. Defaults to hybrid." }
+        }
+      },
+      "executor": "tools/gtm_launch_plan.ts",
+      "execution_target": "sandbox"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "positioning_brief",
+      "description": "Builds an April Dunford positioning canvas (competitive alternatives → unique attributes → value → who cares → market category) from the facts you provide and returns a gap checklist of what's missing or weak. Use when shaping or pressure-testing positioning.",
+      "category": "marketing",
+      "risk": "low",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "product": { "type": "string", "description": "The product/company being positioned." },
+          "competitive_alternatives": { "type": "array", "items": { "type": "string" }, "description": "What customers would use if you didn't exist (incl. status quo / 'do nothing')." },
+          "unique_attributes": { "type": "array", "items": { "type": "string" }, "description": "Capabilities/features you have that the alternatives lack." },
+          "value_themes": { "type": "array", "items": { "type": "string" }, "description": "The value those attributes enable for the customer." },
+          "target_segment": { "type": "string", "description": "The segment that cares most about that value (best-fit ICP)." },
+          "market_category": { "type": "string", "description": "The market frame of reference you want buyers to slot you into." },
+          "proof_points": { "type": "array", "items": { "type": "string" }, "description": "Evidence: metrics, customers, benchmarks." }
+        }
+      },
+      "executor": "tools/positioning_brief.ts",
+      "execution_target": "sandbox"
+    }
+  ]
+}

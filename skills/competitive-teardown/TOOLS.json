@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "competitive_scan",
+      "description": "Returns a structured competitive-analysis rubric (dimensions to investigate) and a comparison-table format to fill. Use before analyzing a competitor, then gather the facts with web_search/web_fetch.",
+      "category": "marketing",
+      "risk": "low",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "competitor": { "type": "string", "description": "The competitor to scan." },
+          "your_product": { "type": "string", "description": "Your product, for the head-to-head comparison." },
+          "dimensions": { "type": "array", "items": { "type": "string" }, "description": "Optional custom dimensions; defaults to the standard set." }
+        }
+      },
+      "executor": "tools/competitive_scan.ts",
+      "execution_target": "sandbox"
+    }
+  ]
+}
