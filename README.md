@@ -42,19 +42,22 @@ contents at `<workspaceDir>/plugins/marketing-expert/` and restart.)
    > "I have no idea where to start with marketing for my side project."
 
 3. **Provide context when asked.** The assistant works best with real numbers: revenue, CAC, conversion rates, budget. If you don't have them yet, it'll tell you what matters and make assumptions explicit.
-4. **Follow the playbook.** The activated skill guides you through a structured workflow and calls the right tools (funnel math, positioning canvas, etc.) inline. You'll get quantified recommendations and 2 to 3 prioritized next actions, not generic advice.
+4. **Follow the playbook.** The activated skill guides you through a structured workflow and calls the tools it bundles (funnel math, positioning canvas, etc.). You'll get quantified recommendations and 2 to 3 prioritized next actions, not generic advice.
 
 ## How it works — two layers
 
 | Layer | What it is | What it's for |
 | --- | --- | --- |
 | **Skills** (`skills/`) | On-demand step-graph playbooks; **trigger on marketing requests** | The mindset + rigorous, repeatable workflows |
-| **Tools** (`tools/`) | Deterministic helpers the model calls inline | Math & structured scaffolds it shouldn't improvise |
+| **Tools** (bundled in each skill's `TOOLS.json`) | Deterministic helpers a skill exposes once loaded | Math & structured scaffolds it shouldn't improvise |
 
 **Activation model:** the plugin adds no system-prompt footprint. The persona,
 operating principles, and competency depth live in the on-demand
 `marketing-expert` skill, which fires — via its `activation-hints` — when the user
-asks for marketing help and routes to the specific playbooks below.
+asks for marketing help and routes to the specific playbooks below. The
+deterministic tools are **bundled into the skills that use them** (each skill's
+`TOOLS.json`), so a tool loads with its skill and runs in the skill sandbox —
+nothing is registered as an always-on tool.
 
 ## Skills
 
@@ -80,18 +83,22 @@ asks for marketing help and routes to the specific playbooks below.
 
 ## Tools
 
-- **`funnel_math`** — CAC (blended & paid), LTV, LTV:CAC, payback months, and
+Each deterministic tool is **bundled into the skill it serves** (via that skill's
+`TOOLS.json`) and becomes available only when the skill is loaded — nothing is
+registered always-on:
+
+- **`funnel_math`** (in `demand-plan`) — CAC (blended & paid), LTV, LTV:CAC, payback months, and
   stage→stage→revenue funnel projections (B2B or B2C), with health flags. Real arithmetic.
-- **`positioning_brief`** — April Dunford positioning canvas + gap checklist.
-- **`gtm_launch_plan`** — tiered launch/campaign brief: channels, timeline, owners, budget split, funnel-tied metrics.
-- **`competitive_scan`** — competitor investigation rubric + comparison format (filled with the assistant's web tools).
+- **`positioning_brief`** (in `positioning-sprint`) — April Dunford positioning canvas + gap checklist.
+- **`gtm_launch_plan`** (in `launch-playbook`) — tiered launch/campaign brief: channels, timeline, owners, budget split, funnel-tied metrics.
+- **`competitive_scan`** (in `competitive-teardown`) — competitor investigation rubric + comparison format (filled with the assistant's web tools).
 
 ## Verify
 
 1. After install, confirm load in the daemon logs (no `marketing-expert` load error).
 2. Ask for marketing help (e.g. "how are we doing on CAC?" with some numbers, or
-   "plan our Q3 launch") and confirm the right skill activates, the reply reads
-   like a marketing expert, and `funnel_math` is called for any math.
+   "plan our Q3 launch") and confirm the right skill activates and its bundled tool
+   runs — e.g. `demand-plan` loads and its `funnel_math` runs for the CAC math.
 
 ## Operating principles
 

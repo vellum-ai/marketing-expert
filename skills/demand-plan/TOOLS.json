@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "funnel_math",
+      "description": "Deterministic unit-economics and funnel calculator for any business (B2B or B2C): CAC (blended & paid), LTV, LTV:CAC, payback months, and stage→stage→revenue funnel projections (the lead/MQL/SQL fields map to whatever funnel stages the business uses), with health flags. Use this for any marketing math instead of computing in prose.",
+      "category": "marketing",
+      "risk": "low",
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "period_label": { "type": "string", "description": "Label for the period the spend/volume covers, e.g. 'monthly' or 'Q3'. Default 'monthly'." },
+          "marketing_spend": { "type": "number", "description": "Total marketing spend for the period (for blended CAC)." },
+          "paid_spend": { "type": "number", "description": "Paid-acquisition spend subset (for paid CAC)." },
+          "new_customers": { "type": "number", "description": "New customers won in the period (for CAC)." },
+          "leads": { "type": "number", "description": "Top-of-funnel leads in the period." },
+          "mqls": { "type": "number", "description": "Marketing-qualified leads in the period (drives the projection)." },
+          "mql_to_sql_rate": { "type": "number", "description": "MQL→SQL conversion. Fraction (0.12) or percent (12)." },
+          "sql_to_won_rate": { "type": "number", "description": "SQL→won conversion. Fraction (0.25) or percent (25)." },
+          "acv": { "type": "number", "description": "Average annual contract value per customer." },
+          "gross_margin": { "type": "number", "description": "Gross margin. Fraction (0.8) or percent (80). If omitted, assumes 0.80 — override with the real margin (it varies widely: high for software, much lower for ecommerce/retail/hardware)." },
+          "avg_customer_lifetime_months": { "type": "number", "description": "Average customer lifetime in months (for LTV)." },
+          "monthly_churn_rate": { "type": "number", "description": "Monthly logo churn; lifetime = 1/churn if lifetime not given." },
+          "target_revenue": { "type": "number", "description": "Optional new-revenue target; tool back-solves required MQLs." }
+        }
+      },
+      "executor": "tools/funnel_math.ts",
+      "execution_target": "sandbox"
+    }
+  ]
+}
