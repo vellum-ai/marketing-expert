@@ -44,19 +44,17 @@ contents at `<workspaceDir>/plugins/marketing-expert/` and restart.)
 3. **Provide context when asked.** The assistant works best with real numbers: revenue, CAC, conversion rates, budget. If you don't have them yet, it'll tell you what matters and make assumptions explicit.
 4. **Follow the playbook.** The activated skill guides you through a structured workflow and calls the right tools (funnel math, positioning canvas, etc.) inline. You'll get quantified recommendations and 2 to 3 prioritized next actions, not generic advice.
 
-## How it works — three layers
+## How it works — two layers
 
 | Layer | What it is | What it's for |
 | --- | --- | --- |
-| **Hook** (`hooks/pre-model-call.ts`) | A single-line activation pointer appended to the system prompt | Awareness — so the model engages marketing-expert mode when marketing comes up |
 | **Skills** (`skills/`) | On-demand step-graph playbooks; **trigger on marketing requests** | The mindset + rigorous, repeatable workflows |
 | **Tools** (`tools/`) | Deterministic helpers the model calls inline | Math & structured scaffolds it shouldn't improvise |
 
-**Activation model:** nobody opens the assistant looking for a "marketing expert,"
-so the system-prompt footprint is one line (`src/marketing-expert-frame.ts`). The
-persona, operating principles, and competency depth live in the on-demand
-`marketing-expert` skill, which fires when the user asks for marketing help and
-routes to the specific playbooks below.
+**Activation model:** the plugin adds no system-prompt footprint. The persona,
+operating principles, and competency depth live in the on-demand
+`marketing-expert` skill, which fires — via its `activation-hints` — when the user
+asks for marketing help and routes to the specific playbooks below.
 
 ## Skills
 
@@ -117,8 +115,6 @@ credential prompt; without them the behaviors degrade to explaining the steps.
 
 ## Notes
 
-- The hook self-gates on `callSite === "mainAgent"`, so the one-line pointer never
-  leaks into background/subagent/compaction calls.
 - Built against `@vellumai/plugin-api` (beta; pin the peer-dep range).
 
 ## License
